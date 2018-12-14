@@ -1,0 +1,13 @@
+Package: libpipeline1-dbgsym
+Source: libpipeline
+Version: 1.5.0-2
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Colin Watson <cjwatson@debian.org>
+Installed-Size: 63
+Depends: libpipeline1 (= 1.5.0-2)
+Section: debug
+Priority: optional
+Multi-Arch: same
+Description: debug symbols for libpipeline1
+Build-Ids: 7392d401c6af982c558cc999f967f4906663a976

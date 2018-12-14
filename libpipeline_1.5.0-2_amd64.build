@@ -1,0 +1,1478 @@
+ dpkg-buildpackage -D -us -uc -ui -b -Jauto -Pnobiarch,nocheck,nodoc
+dpkg-buildpackage: info: source package libpipeline
+dpkg-buildpackage: info: source version 1.5.0-2
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: source changed by Colin Watson <cjwatson@debian.org>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ debian/rules clean
+dh clean --builddirectory=debian/build
+   dh_auto_clean -O--builddirectory=debian/build
+   dh_autoreconf_clean -O--builddirectory=debian/build
+   dh_clean -O--builddirectory=debian/build
+ debian/rules binary
+dh binary --builddirectory=debian/build
+   dh_update_autotools_config -O--builddirectory=debian/build
+   debian/rules override_dh_autoreconf
+make[1]: Entering directory '/dev/shm/libpipeline/libpipeline'
+dh_autoreconf ./autogen.sh
+configure.ac:32: installing 'build-aux/compile'
+configure.ac:27: installing 'build-aux/missing'
+gnulib/lib/Makefile.am: installing 'build-aux/depcomp'
+make[1]: Leaving directory '/dev/shm/libpipeline/libpipeline'
+   dh_auto_configure -O--builddirectory=debian/build
+	cd debian/build && ../../configure --build=x86_64-linux-gnu --prefix=/usr --includedir=\${prefix}/include --mandir=\${prefix}/share/man --infodir=\${prefix}/share/info --sysconfdir=/etc --localstatedir=/var --disable-silent-rules --libdir=\${prefix}/lib/x86_64-linux-gnu --libexecdir=\${prefix}/lib/x86_64-linux-gnu --disable-maintainer-mode --disable-dependency-tracking
+configure: loading site script /usr/share/config.site
+checking for a BSD-compatible install... /usr/bin/install
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... (cached) gawk
+checking whether make sets $(MAKE)... (cached) yes
+checking whether make supports nested variables... (cached) yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking whether make supports nested variables... (cached) yes
+checking whether make supports the include directive... yes (GNU style)
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... (cached) o
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether icc accepts -g... (cached) yes
+checking for icc option to accept ISO C89... none needed
+checking whether icc understands -c and -o together... (cached) yes
+checking dependency style of icc... (cached) gcc3
+checking how to run the C preprocessor... icc -E
+checking for grep that handles long lines and -e... (cached) /bin/grep
+checking for egrep... (cached) /bin/grep -E
+checking for ANSI C header files... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... (cached) yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking the archiver (xiar) interface... ar
+checking build system type... (cached) x86_64-pc-linux-gnu
+checking host system type... (cached) x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /bin/sed
+checking for fgrep... (cached) /bin/grep -F
+checking for ld used by icc... (cached) xild -m elf_x86_64
+checking if the linker (xild -m elf_x86_64) is GNU ld... (cached) yes
+checking for BSD- or MS-compatible name lister (nm)... (cached) /usr/bin/x86_64-linux-gnu-nm -B
+checking the name lister (/usr/bin/x86_64-linux-gnu-nm -B) interface... (cached) BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... (cached) 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for xild -m elf_x86_64 option to reload object files... (cached) -r
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... (cached) dlltool
+checking how to associate runtime and link libraries... (cached) printf %s\n
+checking for archiver @FILE support... (cached) @
+checking for strip... (cached) x86_64-linux-gnu-strip
+checking for ranlib... (cached) /usr/bin/x86_64-linux-gnu-ranlib
+checking command to parse /usr/bin/x86_64-linux-gnu-nm -B output from icc object... ok
+checking for sysroot... no
+checking for a working dd... (cached) /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... (cached) mt
+checking if mt is a manifest tool... no
+checking for dlfcn.h... (cached) yes
+checking for objdir... (cached) .libs
+checking if icc supports -fno-rtti -fno-exceptions... (cached) yes
+checking for icc option to produce PIC... (cached) -fpic
+checking if icc PIC flag -fpic works... (cached) yes
+checking if icc static flag -static works... (cached) yes
+checking if icc supports -c -o file.o... (cached) yes
+checking if icc supports -c -o file.o... (cached) yes
+checking whether the icc linker (xild -m elf_x86_64 -m elf_x86_64) supports shared libraries... xild: warning #10013: no objects specified for multi-file optimization
+xild: executing 'ld'
+yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether icc accepts -g... (cached) yes
+checking for icc option to accept ISO C89... (cached) none needed
+checking whether icc understands -c and -o together... (cached) yes
+checking dependency style of icc... (cached) gcc3
+checking for Minix Amsterdam compiler... no
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for icc option to accept ISO C99... none needed
+checking for icc option to accept ISO Standard C... (cached) none needed
+checking how to run the C preprocessor... icc -E
+checking whether C compiler handles -Werror -Wunknown-warning-option... yes
+checking whether C compiler handles -W... yes
+checking whether C compiler handles -Wpointer-arith... yes
+checking whether C compiler handles -Wwrite-strings... yes
+checking whether C compiler handles -Wstrict-prototypes... no
+checking whether C compiler handles -Wshadow... yes
+checking whether C compiler handles -Wformat-security... yes
+checking whether C compiler handles -Wredundant-decls... yes
+checking whether C compiler handles -Wno-missing-field-initializers... yes
+checking whether ln -s works... yes
+checking pkg-config is at least version 0.9.0... yes
+checking for CHECK... no
+checking for library containing strerror... none required
+checking for size_t... (cached) yes
+checking for working alloca.h... (cached) yes
+checking for alloca... (cached) yes
+checking whether // is distinct from /... no
+checking for unistd.h... (cached) yes
+checking for sys/time.h... (cached) yes
+checking for sys/socket.h... (cached) yes
+checking for sys/mman.h... (cached) yes
+checking for sys/param.h... (cached) yes
+checking for wchar.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for sys/select.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for sys/wait.h... (cached) yes
+checking for features.h... (cached) yes
+checking if environ is properly declared... (cached) yes
+checking whether the preprocessor supports include_next... (cached) yes
+checking whether system header files limit the line length... no
+checking for complete errno.h... (cached) yes
+checking whether strerror_r is declared... (cached) yes
+checking for strerror_r... (cached) yes
+checking whether strerror_r returns char *... (cached) yes
+checking for symlink... (cached) yes
+checking for gettimeofday... (cached) yes
+checking for lstat... (cached) yes
+checking for mprotect... (cached) yes
+checking for _set_invalid_parameter_handler... no
+checking for secure_getenv... (cached) yes
+checking for setenv... (cached) yes
+checking for sigaction... (cached) yes
+checking for sigaltstack... (cached) yes
+checking for siginterrupt... (cached) yes
+checking for snprintf... (cached) yes
+checking for strndup... (cached) yes
+checking for vasnprintf... no
+checking for working fcntl.h... (cached) yes
+checking for pid_t... (cached) yes
+checking for mode_t... (cached) yes
+checking for C/C++ restrict keyword... (cached) __restrict
+checking for struct timeval... (cached) yes
+checking for wide-enough struct timeval.tv_sec member... (cached) yes
+checking whether gettimeofday is declared without a macro... (cached) yes
+checking for ld used by icc... (cached) xild -m elf_x86_64
+checking if the linker (xild -m elf_x86_64) is GNU ld... (cached) yes
+checking for shared library run path origin... (cached) done
+checking whether imported symbols can be declared weak... (cached) yes
+checking for pthread.h... (cached) yes
+checking for pthread_kill in -lpthread... (cached) yes
+checking for multithread API to use... posix
+checking whether lstat correctly handles trailing slash... (cached) yes
+checking whether malloc, realloc, calloc are POSIX compliant... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... yes
+checking for unsigned long long int... (cached) yes
+checking for long long int... (cached) yes
+checking for mmap... (cached) yes
+checking for MAP_ANONYMOUS... yes
+checking whether memchr works... (cached) yes
+checking for sigset_t... (cached) yes
+checking for ssize_t... (cached) yes
+checking whether setenv is declared... (cached) yes
+checking for search.h... (cached) yes
+checking for tsearch... (cached) yes
+checking for uid_t in sys/types.h... (cached) yes
+checking whether snprintf returns a byte count as in C99... yes
+checking whether snprintf is declared... (cached) yes
+checking for stdbool.h that conforms to C99... (cached) yes
+checking for _Bool... (cached) yes
+checking for wchar_t... (cached) yes
+checking whether stdint.h conforms to C99... (cached) yes
+checking whether strerror(0) succeeds... yes
+checking whether ffsl is declared without a macro... (cached) yes
+checking whether ffsll is declared without a macro... (cached) yes
+checking whether memmem is declared without a macro... (cached) yes
+checking whether mempcpy is declared without a macro... (cached) yes
+checking whether memrchr is declared without a macro... (cached) yes
+checking whether rawmemchr is declared without a macro... (cached) yes
+checking whether stpcpy is declared without a macro... (cached) yes
+checking whether stpncpy is declared without a macro... (cached) yes
+checking whether strchrnul is declared without a macro... (cached) yes
+checking whether strdup is declared without a macro... (cached) yes
+checking whether strncat is declared without a macro... (cached) yes
+checking whether strndup is declared without a macro... (cached) yes
+checking whether strnlen is declared without a macro... (cached) yes
+checking whether strpbrk is declared without a macro... (cached) yes
+checking whether strsep is declared without a macro... (cached) yes
+checking whether strcasestr is declared without a macro... (cached) yes
+checking whether strtok_r is declared without a macro... (cached) yes
+checking whether strerror_r is declared without a macro... (cached) yes
+checking whether strsignal is declared without a macro... (cached) yes
+checking whether strverscmp is declared without a macro... (cached) yes
+checking whether strndup is declared... (cached) yes
+checking whether strnlen is declared... (cached) yes
+checking whether strsignal is declared... (cached) yes
+checking whether sys_siglist is declared... (cached) yes
+checking whether stat file-mode macros are broken... no
+checking for struct timespec in <time.h>... (cached) yes
+checking whether unsetenv is declared... (cached) yes
+checking for wint_t... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for intmax_t... (cached) yes
+checking where to find the exponent in a 'double'... word 1 bit 20
+checking for snprintf... (cached) yes
+checking for strnlen... (cached) yes
+checking for wcslen... (cached) yes
+checking for wcsnlen... (cached) yes
+checking for mbrtowc... (cached) yes
+checking for wcrtomb... (cached) yes
+checking whether _snprintf is declared... no
+checking whether <wchar.h> uses 'inline' correctly... (cached) yes
+checking for alloca as a compiler built-in... (cached) yes
+checking whether // is distinct from /... (cached) no
+checking for error_at_line... (cached) yes
+checking whether fcntl is declared without a macro... (cached) yes
+checking whether openat is declared without a macro... (cached) yes
+checking whether conversion from 'int' to 'long double' works... (cached) yes
+checking whether gettimeofday clobbers localtime buffer... no
+checking for gettimeofday with POSIX signature... (cached) yes
+checking for C compiler flag to ignore unused libraries... (cached) -Wl,--as-needed
+checking for pthread_rwlock_t... (cached) yes
+checking for mkdtemp... (cached) yes
+checking for raise... (cached) yes
+checking for sigprocmask... (cached) yes
+checking whether setenv validates arguments... (cached) yes
+checking for struct sigaction.sa_sigaction... (cached) yes
+checking for volatile sig_atomic_t... (cached) yes
+checking for sighandler_t... (cached) yes
+checking whether pthread_sigmask is declared without a macro... (cached) yes
+checking whether sigaction is declared without a macro... (cached) yes
+checking whether sigaddset is declared without a macro... (cached) yes
+checking whether sigdelset is declared without a macro... (cached) yes
+checking whether sigemptyset is declared without a macro... (cached) yes
+checking whether sigfillset is declared without a macro... (cached) yes
+checking whether sigismember is declared without a macro... (cached) yes
+checking whether sigpending is declared without a macro... (cached) yes
+checking whether sigprocmask is declared without a macro... (cached) yes
+checking for sigprocmask... (cached) yes
+checking for stdint.h... (cached) yes
+checking for SIZE_MAX... (cached) yes
+checking for snprintf... (cached) yes
+checking whether snprintf respects a size of 1... yes
+checking whether printf supports POSIX/XSI format strings with positions... (cached) yes
+checking for ssize_t... (cached) yes
+checking whether stat handles trailing slashes on directories... (cached) yes
+checking whether stat handles trailing slashes on files... (cached) yes
+checking for va_copy... (cached) yes
+checking whether NULL can be used in arbitrary expressions... (cached) yes
+checking whether dprintf is declared without a macro... (cached) yes
+checking whether fpurge is declared without a macro... no
+checking whether fseeko is declared without a macro... (cached) yes
+checking whether ftello is declared without a macro... (cached) yes
+checking whether getdelim is declared without a macro... (cached) yes
+checking whether getline is declared without a macro... (cached) yes
+checking whether gets is declared without a macro... no
+checking whether pclose is declared without a macro... (cached) yes
+checking whether popen is declared without a macro... (cached) yes
+checking whether renameat is declared without a macro... (cached) yes
+checking whether snprintf is declared without a macro... (cached) yes
+checking whether tmpfile is declared without a macro... (cached) yes
+checking whether vdprintf is declared without a macro... (cached) yes
+checking whether vsnprintf is declared without a macro... (cached) yes
+checking whether _Exit is declared without a macro... (cached) yes
+checking whether atoll is declared without a macro... (cached) yes
+checking whether canonicalize_file_name is declared without a macro... (cached) yes
+checking whether getloadavg is declared without a macro... (cached) yes
+checking whether getsubopt is declared without a macro... (cached) yes
+checking whether grantpt is declared without a macro... (cached) yes
+checking whether initstate is declared without a macro... (cached) yes
+checking whether initstate_r is declared without a macro... (cached) yes
+checking whether mkdtemp is declared without a macro... (cached) yes
+checking whether mkostemp is declared without a macro... (cached) yes
+checking whether mkostemps is declared without a macro... (cached) yes
+checking whether mkstemp is declared without a macro... (cached) yes
+checking whether mkstemps is declared without a macro... (cached) yes
+checking whether posix_openpt is declared without a macro... (cached) yes
+checking whether ptsname is declared without a macro... (cached) yes
+checking whether ptsname_r is declared without a macro... (cached) yes
+checking whether random is declared without a macro... (cached) yes
+checking whether random_r is declared without a macro... (cached) yes
+checking whether realpath is declared without a macro... (cached) yes
+checking whether rpmatch is declared without a macro... (cached) yes
+checking whether secure_getenv is declared without a macro... (cached) yes
+checking whether setenv is declared without a macro... (cached) yes
+checking whether setstate is declared without a macro... (cached) yes
+checking whether setstate_r is declared without a macro... (cached) yes
+checking whether srandom is declared without a macro... (cached) yes
+checking whether srandom_r is declared without a macro... (cached) yes
+checking whether strtod is declared without a macro... (cached) yes
+checking whether strtoll is declared without a macro... (cached) yes
+checking whether strtoull is declared without a macro... (cached) yes
+checking whether unlockpt is declared without a macro... (cached) yes
+checking whether unsetenv is declared without a macro... (cached) yes
+checking for working strerror function... (cached) yes
+checking for working strndup... (cached) yes
+checking for working strnlen... (cached) yes
+checking for strsignal... (cached) yes
+checking whether strsignal always returns a string... (cached) yes
+checking whether <sys/select.h> is self-contained... (cached) yes
+checking whether pselect is declared without a macro... (cached) yes
+checking whether select is declared without a macro... (cached) yes
+checking for nlink_t... (cached) yes
+checking whether fchmodat is declared without a macro... (cached) yes
+checking whether fstat is declared without a macro... (cached) yes
+checking whether fstatat is declared without a macro... (cached) yes
+checking whether futimens is declared without a macro... (cached) yes
+checking whether lchmod is declared without a macro... (cached) yes
+checking whether lstat is declared without a macro... (cached) yes
+checking whether mkdirat is declared without a macro... (cached) yes
+checking whether mkfifo is declared without a macro... (cached) yes
+checking whether mkfifoat is declared without a macro... (cached) yes
+checking whether mknod is declared without a macro... (cached) yes
+checking whether mknodat is declared without a macro... (cached) yes
+checking whether stat is declared without a macro... (cached) yes
+checking whether utimensat is declared without a macro... (cached) yes
+checking whether waitpid is declared without a macro... (cached) yes
+checking whether chdir is declared without a macro... (cached) yes
+checking whether chown is declared without a macro... (cached) yes
+checking whether dup is declared without a macro... (cached) yes
+checking whether dup2 is declared without a macro... yes
+checking whether dup3 is declared without a macro... yes
+checking whether environ is declared without a macro... (cached) yes
+checking whether euidaccess is declared without a macro... (cached) yes
+checking whether faccessat is declared without a macro... (cached) yes
+checking whether fchdir is declared without a macro... (cached) yes
+checking whether fchownat is declared without a macro... (cached) yes
+checking whether fdatasync is declared without a macro... (cached) yes
+checking whether fsync is declared without a macro... (cached) yes
+checking whether ftruncate is declared without a macro... (cached) yes
+checking whether getcwd is declared without a macro... (cached) yes
+checking whether getdomainname is declared without a macro... (cached) yes
+checking whether getdtablesize is declared without a macro... (cached) yes
+checking whether getgroups is declared without a macro... (cached) yes
+checking whether gethostname is declared without a macro... (cached) yes
+checking whether getlogin is declared without a macro... (cached) yes
+checking whether getlogin_r is declared without a macro... (cached) yes
+checking whether getpagesize is declared without a macro... (cached) yes
+checking whether getusershell is declared without a macro... (cached) yes
+checking whether setusershell is declared without a macro... (cached) yes
+checking whether endusershell is declared without a macro... (cached) yes
+checking whether group_member is declared without a macro... (cached) yes
+checking whether isatty is declared without a macro... (cached) yes
+checking whether lchown is declared without a macro... (cached) yes
+checking whether link is declared without a macro... (cached) yes
+checking whether linkat is declared without a macro... (cached) yes
+checking whether lseek is declared without a macro... (cached) yes
+checking whether pipe is declared without a macro... (cached) yes
+checking whether pipe2 is declared without a macro... yes
+checking whether pread is declared without a macro... (cached) yes
+checking whether pwrite is declared without a macro... (cached) yes
+checking whether readlink is declared without a macro... (cached) yes
+checking whether readlinkat is declared without a macro... (cached) yes
+checking whether rmdir is declared without a macro... (cached) yes
+checking whether sethostname is declared without a macro... (cached) yes
+checking whether sleep is declared without a macro... (cached) yes
+checking whether symlink is declared without a macro... (cached) yes
+checking whether symlinkat is declared without a macro... (cached) yes
+checking whether ttyname_r is declared without a macro... (cached) yes
+checking whether unlink is declared without a macro... (cached) yes
+checking whether unlinkat is declared without a macro... (cached) yes
+checking whether usleep is declared without a macro... (cached) yes
+checking for unsetenv... (cached) yes
+checking for unsetenv() return type... (cached) int
+checking whether unsetenv obeys POSIX... (cached) yes
+checking for ptrdiff_t... (cached) yes
+checking for vasprintf... (cached) yes
+checking whether btowc is declared without a macro... (cached) yes
+checking whether wctob is declared without a macro... (cached) yes
+checking whether mbsinit is declared without a macro... (cached) yes
+checking whether mbrtowc is declared without a macro... (cached) yes
+checking whether mbrlen is declared without a macro... (cached) yes
+checking whether mbsrtowcs is declared without a macro... (cached) yes
+checking whether mbsnrtowcs is declared without a macro... (cached) yes
+checking whether wcrtomb is declared without a macro... (cached) yes
+checking whether wcsrtombs is declared without a macro... (cached) yes
+checking whether wcsnrtombs is declared without a macro... (cached) yes
+checking whether wcwidth is declared without a macro... (cached) yes
+checking whether wmemchr is declared without a macro... (cached) yes
+checking whether wmemcmp is declared without a macro... (cached) yes
+checking whether wmemcpy is declared without a macro... (cached) yes
+checking whether wmemmove is declared without a macro... (cached) yes
+checking whether wmemset is declared without a macro... (cached) yes
+checking whether wcslen is declared without a macro... (cached) yes
+checking whether wcsnlen is declared without a macro... (cached) yes
+checking whether wcscpy is declared without a macro... (cached) yes
+checking whether wcpcpy is declared without a macro... (cached) yes
+checking whether wcsncpy is declared without a macro... (cached) yes
+checking whether wcpncpy is declared without a macro... (cached) yes
+checking whether wcscat is declared without a macro... (cached) yes
+checking whether wcsncat is declared without a macro... (cached) yes
+checking whether wcscmp is declared without a macro... (cached) yes
+checking whether wcsncmp is declared without a macro... (cached) yes
+checking whether wcscasecmp is declared without a macro... (cached) yes
+checking whether wcsncasecmp is declared without a macro... (cached) yes
+checking whether wcscoll is declared without a macro... (cached) yes
+checking whether wcsxfrm is declared without a macro... (cached) yes
+checking whether wcsdup is declared without a macro... (cached) yes
+checking whether wcschr is declared without a macro... (cached) yes
+checking whether wcsrchr is declared without a macro... (cached) yes
+checking whether wcscspn is declared without a macro... (cached) yes
+checking whether wcsspn is declared without a macro... (cached) yes
+checking whether wcspbrk is declared without a macro... (cached) yes
+checking whether wcsstr is declared without a macro... (cached) yes
+checking whether wcstok is declared without a macro... (cached) yes
+checking whether wcswidth is declared without a macro... (cached) yes
+checking for stdint.h... (cached) yes
+checking for fcntl.h... (cached) yes
+checking for clearenv... (cached) yes
+checking for an ANSI C-conforming const... (cached) yes
+checking for pid_t... (cached) yes
+checking for size_t... (cached) yes
+checking vfork.h usability... no
+checking vfork.h presence... no
+checking for vfork.h... no
+checking for fork... (cached) yes
+checking for vfork... (cached) yes
+checking for working fork... (cached) yes
+checking for working vfork... (cached) yes
+configure: default CC = "icc"
+configure: default CPP = "icc -E"
+configure: default CPPFLAGS = "-Wdate-time -D_FORTIFY_SOURCE=2"
+configure: default CFLAGS = "-g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall"
+configure: default LDFLAGS = "-Wl,-z,relro -Wl,-z,now -Wl,--as-needed,--gc-sections,--relax"
+configure: default LIBS = ""
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating gnulib/lib/Makefile
+config.status: creating lib/Makefile
+config.status: creating lib/libpipeline.pc
+config.status: creating man/Makefile
+config.status: creating tests/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+   dh_auto_build -O--builddirectory=debian/build
+	cd debian/build && make -j8
+make[1]: Entering directory '/dev/shm/libpipeline/libpipeline/debian/build'
+make  all-recursive
+make[2]: Entering directory '/dev/shm/libpipeline/libpipeline/debian/build'
+Making all in gnulib/lib
+make[3]: Entering directory '/dev/shm/libpipeline/libpipeline/debian/build/gnulib/lib'
+rm -f alloca.h-t alloca.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+  cat ../../../../gnulib/lib/alloca.in.h; \
+} > alloca.h-t && \
+mv -f alloca.h-t alloca.h
+rm -f c++defs.h-t c++defs.h && \
+sed -n -e '/_GL_CXXDEFS/,$p' \
+  < ../../../../build-aux/snippet/c++defs.h \
+  > c++defs.h-t && \
+mv c++defs.h-t c++defs.h
+rm -f arg-nonnull.h-t arg-nonnull.h && \
+sed -n -e '/GL_ARG_NONNULL/,$p' \
+  < ../../../../build-aux/snippet/arg-nonnull.h \
+  > arg-nonnull.h-t && \
+mv arg-nonnull.h-t arg-nonnull.h
+rm -f warn-on-use.h-t warn-on-use.h && \
+sed -n -e '/^.ifndef/,$p' \
+  < ../../../../build-aux/snippet/warn-on-use.h \
+  > warn-on-use.h-t && \
+mv warn-on-use.h-t warn-on-use.h
+/bin/mkdir -p sys
+rm -f sys/types.h-t sys/types.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_SYS_TYPES_H''@|<sys/types.h>|g' \
+      -e 's|@''WINDOWS_64_BIT_OFF_T''@|0|g' \
+      < ../../../../gnulib/lib/sys_types.in.h; \
+} > sys/types.h-t && \
+mv sys/types.h-t sys/types.h
+rm -f fcntl.h-t fcntl.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_FCNTL_H''@|<fcntl.h>|g' \
+      -e 's/@''GNULIB_FCNTL''@/0/g' \
+      -e 's/@''GNULIB_NONBLOCKING''@/0/g' \
+      -e 's/@''GNULIB_OPEN''@/0/g' \
+      -e 's/@''GNULIB_OPENAT''@/0/g' \
+      -e 's|@''HAVE_FCNTL''@|1|g' \
+      -e 's|@''HAVE_OPENAT''@|1|g' \
+      -e 's|@''REPLACE_FCNTL''@|0|g' \
+      -e 's|@''REPLACE_OPEN''@|0|g' \
+      -e 's|@''REPLACE_OPENAT''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r warn-on-use.h' \
+      < ../../../../gnulib/lib/fcntl.in.h; \
+} > fcntl.h-t && \
+mv fcntl.h-t fcntl.h
+rm -f signal.h-t signal.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */' && \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_SIGNAL_H''@|<signal.h>|g' \
+      -e 's|@''GNULIB_PTHREAD_SIGMASK''@|0|g' \
+      -e 's|@''GNULIB_RAISE''@|1|g' \
+      -e 's/@''GNULIB_SIGNAL_H_SIGPIPE''@/0/g' \
+      -e 's/@''GNULIB_SIGPROCMASK''@/1/g' \
+      -e 's/@''GNULIB_SIGACTION''@/1/g' \
+      -e 's|@''HAVE_POSIX_SIGNALBLOCKING''@|1|g' \
+      -e 's|@''HAVE_PTHREAD_SIGMASK''@|1|g' \
+      -e 's|@''HAVE_RAISE''@|1|g' \
+      -e 's|@''HAVE_SIGSET_T''@|1|g' \
+      -e 's|@''HAVE_SIGINFO_T''@|1|g' \
+      -e 's|@''HAVE_SIGACTION''@|1|g' \
+      -e 's|@''HAVE_STRUCT_SIGACTION_SA_SIGACTION''@|1|g' \
+      -e 's|@''HAVE_TYPE_VOLATILE_SIG_ATOMIC_T''@|1|g' \
+      -e 's|@''HAVE_SIGHANDLER_T''@|1|g' \
+      -e 's|@''REPLACE_PTHREAD_SIGMASK''@|0|g' \
+      -e 's|@''REPLACE_RAISE''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r warn-on-use.h' \
+      < ../../../../gnulib/lib/signal.in.h; \
+} > signal.h-t && \
+mv signal.h-t signal.h
+rm -f stdio.h-t stdio.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */' && \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_STDIO_H''@|<stdio.h>|g' \
+      -e 's/@''GNULIB_DPRINTF''@/0/g' \
+      -e 's/@''GNULIB_FCLOSE''@/0/g' \
+      -e 's/@''GNULIB_FDOPEN''@/0/g' \
+      -e 's/@''GNULIB_FFLUSH''@/0/g' \
+      -e 's/@''GNULIB_FGETC''@/1/g' \
+      -e 's/@''GNULIB_FGETS''@/1/g' \
+      -e 's/@''GNULIB_FOPEN''@/0/g' \
+      -e 's/@''GNULIB_FPRINTF''@/1/g' \
+      -e 's/@''GNULIB_FPRINTF_POSIX''@/0/g' \
+      -e 's/@''GNULIB_FPURGE''@/0/g' \
+      -e 's/@''GNULIB_FPUTC''@/1/g' \
+      -e 's/@''GNULIB_FPUTS''@/1/g' \
+      -e 's/@''GNULIB_FREAD''@/1/g' \
+      -e 's/@''GNULIB_FREOPEN''@/0/g' \
+      -e 's/@''GNULIB_FSCANF''@/1/g' \
+      -e 's/@''GNULIB_FSEEK''@/0/g' \
+      -e 's/@''GNULIB_FSEEKO''@/0/g' \
+      -e 's/@''GNULIB_FTELL''@/0/g' \
+      -e 's/@''GNULIB_FTELLO''@/0/g' \
+      -e 's/@''GNULIB_FWRITE''@/1/g' \
+      -e 's/@''GNULIB_GETC''@/1/g' \
+      -e 's/@''GNULIB_GETCHAR''@/1/g' \
+      -e 's/@''GNULIB_GETDELIM''@/0/g' \
+      -e 's/@''GNULIB_GETLINE''@/0/g' \
+      -e 's/@''GNULIB_OBSTACK_PRINTF''@/0/g' \
+      -e 's/@''GNULIB_OBSTACK_PRINTF_POSIX''@/0/g' \
+      -e 's/@''GNULIB_PCLOSE''@/0/g' \
+      -e 's/@''GNULIB_PERROR''@/0/g' \
+      -e 's/@''GNULIB_POPEN''@/0/g' \
+      -e 's/@''GNULIB_PRINTF''@/1/g' \
+      -e 's/@''GNULIB_PRINTF_POSIX''@/0/g' \
+      -e 's/@''GNULIB_PUTC''@/1/g' \
+      -e 's/@''GNULIB_PUTCHAR''@/1/g' \
+      -e 's/@''GNULIB_PUTS''@/1/g' \
+      -e 's/@''GNULIB_REMOVE''@/0/g' \
+      -e 's/@''GNULIB_RENAME''@/0/g' \
+      -e 's/@''GNULIB_RENAMEAT''@/0/g' \
+      -e 's/@''GNULIB_SCANF''@/1/g' \
+      -e 's/@''GNULIB_SNPRINTF''@/1/g' \
+      -e 's/@''GNULIB_SPRINTF_POSIX''@/0/g' \
+      -e 's/@''GNULIB_STDIO_H_NONBLOCKING''@/0/g' \
+      -e 's/@''GNULIB_STDIO_H_SIGPIPE''@/0/g' \
+      -e 's/@''GNULIB_TMPFILE''@/0/g' \
+      -e 's/@''GNULIB_VASPRINTF''@/1/g' \
+      -e 's/@''GNULIB_VDPRINTF''@/0/g' \
+      -e 's/@''GNULIB_VFPRINTF''@/1/g' \
+      -e 's/@''GNULIB_VFPRINTF_POSIX''@/0/g' \
+      -e 's/@''GNULIB_VFSCANF''@/0/g' \
+      -e 's/@''GNULIB_VSCANF''@/0/g' \
+      -e 's/@''GNULIB_VPRINTF''@/1/g' \
+      -e 's/@''GNULIB_VPRINTF_POSIX''@/0/g' \
+      -e 's/@''GNULIB_VSNPRINTF''@/0/g' \
+      -e 's/@''GNULIB_VSPRINTF_POSIX''@/0/g' \
+      < ../../../../gnulib/lib/stdio.in.h | \
+  sed -e 's|@''HAVE_DECL_FPURGE''@|1|g' \
+      -e 's|@''HAVE_DECL_FSEEKO''@|1|g' \
+      -e 's|@''HAVE_DECL_FTELLO''@|1|g' \
+      -e 's|@''HAVE_DECL_GETDELIM''@|1|g' \
+      -e 's|@''HAVE_DECL_GETLINE''@|1|g' \
+      -e 's|@''HAVE_DECL_OBSTACK_PRINTF''@|1|g' \
+      -e 's|@''HAVE_DECL_SNPRINTF''@|1|g' \
+      -e 's|@''HAVE_DECL_VSNPRINTF''@|1|g' \
+      -e 's|@''HAVE_DPRINTF''@|1|g' \
+      -e 's|@''HAVE_FSEEKO''@|1|g' \
+      -e 's|@''HAVE_FTELLO''@|1|g' \
+      -e 's|@''HAVE_PCLOSE''@|1|g' \
+      -e 's|@''HAVE_POPEN''@|1|g' \
+      -e 's|@''HAVE_RENAMEAT''@|1|g' \
+      -e 's|@''HAVE_VASPRINTF''@|1|g' \
+      -e 's|@''HAVE_VDPRINTF''@|1|g' \
+      -e 's|@''REPLACE_DPRINTF''@|0|g' \
+      -e 's|@''REPLACE_FCLOSE''@|0|g' \
+      -e 's|@''REPLACE_FDOPEN''@|0|g' \
+      -e 's|@''REPLACE_FFLUSH''@|0|g' \
+      -e 's|@''REPLACE_FOPEN''@|0|g' \
+      -e 's|@''REPLACE_FPRINTF''@|0|g' \
+      -e 's|@''REPLACE_FPURGE''@|0|g' \
+      -e 's|@''REPLACE_FREOPEN''@|0|g' \
+      -e 's|@''REPLACE_FSEEK''@|0|g' \
+      -e 's|@''REPLACE_FSEEKO''@|0|g' \
+      -e 's|@''REPLACE_FTELL''@|0|g' \
+      -e 's|@''REPLACE_FTELLO''@|0|g' \
+      -e 's|@''REPLACE_GETDELIM''@|0|g' \
+      -e 's|@''REPLACE_GETLINE''@|0|g' \
+      -e 's|@''REPLACE_OBSTACK_PRINTF''@|0|g' \
+      -e 's|@''REPLACE_PERROR''@|0|g' \
+      -e 's|@''REPLACE_POPEN''@|0|g' \
+      -e 's|@''REPLACE_PRINTF''@|0|g' \
+      -e 's|@''REPLACE_REMOVE''@|0|g' \
+      -e 's|@''REPLACE_RENAME''@|0|g' \
+      -e 's|@''REPLACE_RENAMEAT''@|0|g' \
+      -e 's|@''REPLACE_SNPRINTF''@|0|g' \
+      -e 's|@''REPLACE_SPRINTF''@|0|g' \
+      -e 's|@''REPLACE_STDIO_READ_FUNCS''@|0|g' \
+      -e 's|@''REPLACE_STDIO_WRITE_FUNCS''@|0|g' \
+      -e 's|@''REPLACE_TMPFILE''@|0|g' \
+      -e 's|@''REPLACE_VASPRINTF''@|0|g' \
+      -e 's|@''REPLACE_VDPRINTF''@|0|g' \
+      -e 's|@''REPLACE_VFPRINTF''@|0|g' \
+      -e 's|@''REPLACE_VPRINTF''@|0|g' \
+      -e 's|@''REPLACE_VSNPRINTF''@|0|g' \
+      -e 's|@''REPLACE_VSPRINTF''@|0|g' \
+      -e 's|@''ASM_SYMBOL_PREFIX''@||g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r warn-on-use.h'; \
+} > stdio.h-t && \
+mv stdio.h-t stdio.h
+rm -f stdlib.h-t stdlib.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */' && \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_STDLIB_H''@|<stdlib.h>|g' \
+      -e 's/@''GNULIB__EXIT''@/0/g' \
+      -e 's/@''GNULIB_ATOLL''@/0/g' \
+      -e 's/@''GNULIB_CALLOC_POSIX''@/0/g' \
+      -e 's/@''GNULIB_CANONICALIZE_FILE_NAME''@/0/g' \
+      -e 's/@''GNULIB_GETLOADAVG''@/0/g' \
+      -e 's/@''GNULIB_GETSUBOPT''@/0/g' \
+      -e 's/@''GNULIB_GRANTPT''@/0/g' \
+      -e 's/@''GNULIB_MALLOC_POSIX''@/1/g' \
+      -e 's/@''GNULIB_MBTOWC''@/0/g' \
+      -e 's/@''GNULIB_MKDTEMP''@/1/g' \
+      -e 's/@''GNULIB_MKOSTEMP''@/0/g' \
+      -e 's/@''GNULIB_MKOSTEMPS''@/0/g' \
+      -e 's/@''GNULIB_MKSTEMP''@/0/g' \
+      -e 's/@''GNULIB_MKSTEMPS''@/0/g' \
+      -e 's/@''GNULIB_POSIX_OPENPT''@/0/g' \
+      -e 's/@''GNULIB_PTSNAME''@/0/g' \
+      -e 's/@''GNULIB_PTSNAME_R''@/0/g' \
+      -e 's/@''GNULIB_PUTENV''@/0/g' \
+      -e 's/@''GNULIB_RANDOM''@/0/g' \
+      -e 's/@''GNULIB_RANDOM_R''@/0/g' \
+      -e 's/@''GNULIB_REALLOC_POSIX''@/0/g' \
+      -e 's/@''GNULIB_REALPATH''@/0/g' \
+      -e 's/@''GNULIB_RPMATCH''@/0/g' \
+      -e 's/@''GNULIB_SECURE_GETENV''@/1/g' \
+      -e 's/@''GNULIB_SETENV''@/1/g' \
+      -e 's/@''GNULIB_STRTOD''@/0/g' \
+      -e 's/@''GNULIB_STRTOLL''@/0/g' \
+      -e 's/@''GNULIB_STRTOULL''@/0/g' \
+      -e 's/@''GNULIB_SYSTEM_POSIX''@/0/g' \
+      -e 's/@''GNULIB_UNLOCKPT''@/0/g' \
+      -e 's/@''GNULIB_UNSETENV''@/1/g' \
+      -e 's/@''GNULIB_WCTOMB''@/0/g' \
+      < ../../../../gnulib/lib/stdlib.in.h | \
+  sed -e 's|@''HAVE__EXIT''@|1|g' \
+      -e 's|@''HAVE_ATOLL''@|1|g' \
+      -e 's|@''HAVE_CANONICALIZE_FILE_NAME''@|1|g' \
+      -e 's|@''HAVE_DECL_GETLOADAVG''@|1|g' \
+      -e 's|@''HAVE_GETSUBOPT''@|1|g' \
+      -e 's|@''HAVE_GRANTPT''@|1|g' \
+      -e 's|@''HAVE_MKDTEMP''@|1|g' \
+      -e 's|@''HAVE_MKOSTEMP''@|1|g' \
+      -e 's|@''HAVE_MKOSTEMPS''@|1|g' \
+      -e 's|@''HAVE_MKSTEMP''@|1|g' \
+      -e 's|@''HAVE_MKSTEMPS''@|1|g' \
+      -e 's|@''HAVE_POSIX_OPENPT''@|1|g' \
+      -e 's|@''HAVE_PTSNAME''@|1|g' \
+      -e 's|@''HAVE_PTSNAME_R''@|1|g' \
+      -e 's|@''HAVE_RANDOM''@|1|g' \
+      -e 's|@''HAVE_RANDOM_H''@|1|g' \
+      -e 's|@''HAVE_RANDOM_R''@|1|g' \
+      -e 's|@''HAVE_REALPATH''@|1|g' \
+      -e 's|@''HAVE_RPMATCH''@|1|g' \
+      -e 's|@''HAVE_SECURE_GETENV''@|1|g' \
+      -e 's|@''HAVE_DECL_SETENV''@|1|g' \
+      -e 's|@''HAVE_STRTOD''@|1|g' \
+      -e 's|@''HAVE_STRTOLL''@|1|g' \
+      -e 's|@''HAVE_STRTOULL''@|1|g' \
+      -e 's|@''HAVE_STRUCT_RANDOM_DATA''@|1|g' \
+      -e 's|@''HAVE_SYS_LOADAVG_H''@|0|g' \
+      -e 's|@''HAVE_UNLOCKPT''@|1|g' \
+      -e 's|@''HAVE_DECL_UNSETENV''@|1|g' \
+      -e 's|@''REPLACE_CALLOC''@|0|g' \
+      -e 's|@''REPLACE_CANONICALIZE_FILE_NAME''@|0|g' \
+      -e 's|@''REPLACE_MALLOC''@|0|g' \
+      -e 's|@''REPLACE_MBTOWC''@|0|g' \
+      -e 's|@''REPLACE_MKSTEMP''@|0|g' \
+      -e 's|@''REPLACE_PTSNAME''@|0|g' \
+      -e 's|@''REPLACE_PTSNAME_R''@|0|g' \
+      -e 's|@''REPLACE_PUTENV''@|0|g' \
+      -e 's|@''REPLACE_RANDOM_R''@|0|g' \
+      -e 's|@''REPLACE_REALLOC''@|0|g' \
+      -e 's|@''REPLACE_REALPATH''@|0|g' \
+      -e 's|@''REPLACE_SETENV''@|0|g' \
+      -e 's|@''REPLACE_STRTOD''@|0|g' \
+      -e 's|@''REPLACE_UNSETENV''@|0|g' \
+      -e 's|@''REPLACE_WCTOMB''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r c++defs.h' \
+      -e '/definition of _Noreturn/r ../../../../build-aux/snippet/_Noreturn.h' \
+      -e '/definition of _GL_ARG_NONNULL/r arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r warn-on-use.h'; \
+} > stdlib.h-t && \
+mv stdlib.h-t stdlib.h
+rm -f string.h-t string.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */' && \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_STRING_H''@|<string.h>|g' \
+      -e 's/@''GNULIB_FFSL''@/0/g' \
+      -e 's/@''GNULIB_FFSLL''@/0/g' \
+      -e 's/@''GNULIB_MBSLEN''@/0/g' \
+      -e 's/@''GNULIB_MBSNLEN''@/0/g' \
+      -e 's/@''GNULIB_MBSCHR''@/0/g' \
+      -e 's/@''GNULIB_MBSRCHR''@/0/g' \
+      -e 's/@''GNULIB_MBSSTR''@/0/g' \
+      -e 's/@''GNULIB_MBSCASECMP''@/0/g' \
+      -e 's/@''GNULIB_MBSNCASECMP''@/0/g' \
+      -e 's/@''GNULIB_MBSPCASECMP''@/0/g' \
+      -e 's/@''GNULIB_MBSCASESTR''@/0/g' \
+      -e 's/@''GNULIB_MBSCSPN''@/0/g' \
+      -e 's/@''GNULIB_MBSPBRK''@/0/g' \
+      -e 's/@''GNULIB_MBSSPN''@/0/g' \
+      -e 's/@''GNULIB_MBSSEP''@/0/g' \
+      -e 's/@''GNULIB_MBSTOK_R''@/0/g' \
+      -e 's/@''GNULIB_MEMCHR''@/1/g' \
+      -e 's/@''GNULIB_MEMMEM''@/0/g' \
+      -e 's/@''GNULIB_MEMPCPY''@/0/g' \
+      -e 's/@''GNULIB_MEMRCHR''@/0/g' \
+      -e 's/@''GNULIB_RAWMEMCHR''@/0/g' \
+      -e 's/@''GNULIB_STPCPY''@/0/g' \
+      -e 's/@''GNULIB_STPNCPY''@/0/g' \
+      -e 's/@''GNULIB_STRCHRNUL''@/0/g' \
+      -e 's/@''GNULIB_STRDUP''@/0/g' \
+      -e 's/@''GNULIB_STRNCAT''@/0/g' \
+      -e 's/@''GNULIB_STRNDUP''@/1/g' \
+      -e 's/@''GNULIB_STRNLEN''@/1/g' \
+      -e 's/@''GNULIB_STRPBRK''@/0/g' \
+      -e 's/@''GNULIB_STRSEP''@/0/g' \
+      -e 's/@''GNULIB_STRSTR''@/0/g' \
+      -e 's/@''GNULIB_STRCASESTR''@/0/g' \
+      -e 's/@''GNULIB_STRTOK_R''@/0/g' \
+      -e 's/@''GNULIB_STRERROR''@/1/g' \
+      -e 's/@''GNULIB_STRERROR_R''@/0/g' \
+      -e 's/@''GNULIB_STRSIGNAL''@/1/g' \
+      -e 's/@''GNULIB_STRVERSCMP''@/0/g' \
+      < ../../../../gnulib/lib/string.in.h | \
+  sed -e 's|@''HAVE_FFSL''@|1|g' \
+      -e 's|@''HAVE_FFSLL''@|1|g' \
+      -e 's|@''HAVE_MBSLEN''@|0|g' \
+      -e 's|@''HAVE_MEMCHR''@|1|g' \
+      -e 's|@''HAVE_DECL_MEMMEM''@|1|g' \
+      -e 's|@''HAVE_MEMPCPY''@|1|g' \
+      -e 's|@''HAVE_DECL_MEMRCHR''@|1|g' \
+      -e 's|@''HAVE_RAWMEMCHR''@|1|g' \
+      -e 's|@''HAVE_STPCPY''@|1|g' \
+      -e 's|@''HAVE_STPNCPY''@|1|g' \
+      -e 's|@''HAVE_STRCHRNUL''@|1|g' \
+      -e 's|@''HAVE_DECL_STRDUP''@|1|g' \
+      -e 's|@''HAVE_DECL_STRNDUP''@|1|g' \
+      -e 's|@''HAVE_DECL_STRNLEN''@|1|g' \
+      -e 's|@''HAVE_STRPBRK''@|1|g' \
+      -e 's|@''HAVE_STRSEP''@|1|g' \
+      -e 's|@''HAVE_STRCASESTR''@|1|g' \
+      -e 's|@''HAVE_DECL_STRTOK_R''@|1|g' \
+      -e 's|@''HAVE_DECL_STRERROR_R''@|1|g' \
+      -e 's|@''HAVE_DECL_STRSIGNAL''@|1|g' \
+      -e 's|@''HAVE_STRVERSCMP''@|1|g' \
+      -e 's|@''REPLACE_STPNCPY''@|0|g' \
+      -e 's|@''REPLACE_MEMCHR''@|0|g' \
+      -e 's|@''REPLACE_MEMMEM''@|0|g' \
+      -e 's|@''REPLACE_STRCASESTR''@|0|g' \
+      -e 's|@''REPLACE_STRCHRNUL''@|0|g' \
+      -e 's|@''REPLACE_STRDUP''@|0|g' \
+      -e 's|@''REPLACE_STRSTR''@|0|g' \
+      -e 's|@''REPLACE_STRERROR''@|0|g' \
+      -e 's|@''REPLACE_STRERROR_R''@|0|g' \
+      -e 's|@''REPLACE_STRNCAT''@|0|g' \
+      -e 's|@''REPLACE_STRNDUP''@|0|g' \
+      -e 's|@''REPLACE_STRNLEN''@|0|g' \
+      -e 's|@''REPLACE_STRSIGNAL''@|0|g' \
+      -e 's|@''REPLACE_STRTOK_R''@|0|g' \
+      -e 's|@''UNDEFINE_STRTOK_R''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r warn-on-use.h'; \
+      < ../../../../gnulib/lib/string.in.h; \
+} > string.h-t && \
+mv string.h-t string.h
+/bin/mkdir -p sys
+/bin/mkdir -p sys
+/bin/mkdir -p sys
+rm -f sys/select.h-t sys/select.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_SYS_SELECT_H''@|<sys/select.h>|g' \
+      -e 's|@''HAVE_SYS_SELECT_H''@|1|g' \
+      -e 's/@''GNULIB_PSELECT''@/0/g' \
+      -e 's/@''GNULIB_SELECT''@/0/g' \
+      -e 's|@''HAVE_WINSOCK2_H''@|0|g' \
+      -e 's|@''HAVE_PSELECT''@|1|g' \
+      -e 's|@''REPLACE_PSELECT''@|0|g' \
+      -e 's|@''REPLACE_SELECT''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r c++defs.h' \
+      -e '/definition of _GL_WARN_ON_USE/r warn-on-use.h' \
+      < ../../../../gnulib/lib/sys_select.in.h; \
+} > sys/select.h-t && \
+mv sys/select.h-t sys/select.h
+rm -f sys/stat.h-t sys/stat.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_SYS_STAT_H''@|<sys/stat.h>|g' \
+      -e 's|@''WINDOWS_64_BIT_ST_SIZE''@|0|g' \
+      -e 's/@''GNULIB_FCHMODAT''@/0/g' \
+      -e 's/@''GNULIB_FSTAT''@/0/g' \
+      -e 's/@''GNULIB_FSTATAT''@/0/g' \
+      -e 's/@''GNULIB_FUTIMENS''@/0/g' \
+      -e 's/@''GNULIB_LCHMOD''@/0/g' \
+      -e 's/@''GNULIB_LSTAT''@/1/g' \
+      -e 's/@''GNULIB_MKDIRAT''@/0/g' \
+      -e 's/@''GNULIB_MKFIFO''@/0/g' \
+      -e 's/@''GNULIB_MKFIFOAT''@/0/g' \
+      -e 's/@''GNULIB_MKNOD''@/0/g' \
+      -e 's/@''GNULIB_MKNODAT''@/0/g' \
+      -e 's/@''GNULIB_STAT''@/1/g' \
+      -e 's/@''GNULIB_UTIMENSAT''@/0/g' \
+      -e 's|@''HAVE_FCHMODAT''@|1|g' \
+      -e 's|@''HAVE_FSTATAT''@|1|g' \
+      -e 's|@''HAVE_FUTIMENS''@|1|g' \
+      -e 's|@''HAVE_LCHMOD''@|1|g' \
+      -e 's|@''HAVE_LSTAT''@|1|g' \
+      -e 's|@''HAVE_MKDIRAT''@|1|g' \
+      -e 's|@''HAVE_MKFIFO''@|1|g' \
+      -e 's|@''HAVE_MKFIFOAT''@|1|g' \
+      -e 's|@''HAVE_MKNOD''@|1|g' \
+      -e 's|@''HAVE_MKNODAT''@|1|g' \
+      -e 's|@''HAVE_UTIMENSAT''@|1|g' \
+      -e 's|@''REPLACE_FSTAT''@|0|g' \
+      -e 's|@''REPLACE_FSTATAT''@|0|g' \
+      -e 's|@''REPLACE_FUTIMENS''@|0|g' \
+      -e 's|@''REPLACE_LSTAT''@|0|g' \
+      -e 's|@''REPLACE_MKDIR''@|0|g' \
+      -e 's|@''REPLACE_MKFIFO''@|0|g' \
+      -e 's|@''REPLACE_MKNOD''@|0|g' \
+      -e 's|@''REPLACE_STAT''@|0|g' \
+      -e 's|@''REPLACE_UTIMENSAT''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r warn-on-use.h' \
+      < ../../../../gnulib/lib/sys_stat.in.h; \
+} > sys/stat.h-t && \
+mv sys/stat.h-t sys/stat.h
+rm -f sys/time.h-t sys/time.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's/@''HAVE_SYS_TIME_H''@/1/g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_SYS_TIME_H''@|<sys/time.h>|g' \
+      -e 's/@''GNULIB_GETTIMEOFDAY''@/1/g' \
+      -e 's|@''HAVE_WINSOCK2_H''@|0|g' \
+      -e 's/@''HAVE_GETTIMEOFDAY''@/1/g' \
+      -e 's/@''HAVE_STRUCT_TIMEVAL''@/1/g' \
+      -e 's/@''REPLACE_GETTIMEOFDAY''@/0/g' \
+      -e 's/@''REPLACE_STRUCT_TIMEVAL''@/0/g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r warn-on-use.h' \
+      < ../../../../gnulib/lib/sys_time.in.h; \
+} > sys/time.h-t && \
+mv sys/time.h-t sys/time.h
+/bin/mkdir -p sys
+rm -f time.h-t time.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */' && \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_TIME_H''@|<time.h>|g' \
+      -e 's/@''GNULIB_GETTIMEOFDAY''@/1/g' \
+      -e 's/@''GNULIB_MKTIME''@/0/g' \
+      -e 's/@''GNULIB_NANOSLEEP''@/0/g' \
+      -e 's/@''GNULIB_STRPTIME''@/0/g' \
+      -e 's/@''GNULIB_TIMEGM''@/0/g' \
+      -e 's/@''GNULIB_TIME_R''@/0/g' \
+      -e 's|@''HAVE_DECL_LOCALTIME_R''@|1|g' \
+      -e 's|@''HAVE_NANOSLEEP''@|1|g' \
+      -e 's|@''HAVE_STRPTIME''@|1|g' \
+      -e 's|@''HAVE_TIMEGM''@|1|g' \
+      -e 's|@''REPLACE_GMTIME''@|0|g' \
+      -e 's|@''REPLACE_LOCALTIME''@|0|g' \
+      -e 's|@''REPLACE_LOCALTIME_R''@|GNULIB_PORTCHECK|g' \
+      -e 's|@''REPLACE_MKTIME''@|GNULIB_PORTCHECK|g' \
+      -e 's|@''REPLACE_NANOSLEEP''@|GNULIB_PORTCHECK|g' \
+      -e 's|@''REPLACE_TIMEGM''@|GNULIB_PORTCHECK|g' \
+      -e 's|@''PTHREAD_H_DEFINES_STRUCT_TIMESPEC''@|0|g' \
+      -e 's|@''SYS_TIME_H_DEFINES_STRUCT_TIMESPEC''@|0|g' \
+      -e 's|@''TIME_H_DEFINES_STRUCT_TIMESPEC''@|1|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r warn-on-use.h' \
+      < ../../../../gnulib/lib/time.in.h; \
+} > time.h-t && \
+mv time.h-t time.h
+rm -f unistd.h-t unistd.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''HAVE_UNISTD_H''@|1|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_UNISTD_H''@|<unistd.h>|g' \
+      -e 's|@''WINDOWS_64_BIT_OFF_T''@|0|g' \
+      -e 's/@''GNULIB_CHDIR''@/0/g' \
+      -e 's/@''GNULIB_CHOWN''@/0/g' \
+      -e 's/@''GNULIB_CLOSE''@/0/g' \
+      -e 's/@''GNULIB_DUP''@/0/g' \
+      -e 's/@''GNULIB_DUP2''@/0/g' \
+      -e 's/@''GNULIB_DUP3''@/0/g' \
+      -e 's/@''GNULIB_ENVIRON''@/1/g' \
+      -e 's/@''GNULIB_EUIDACCESS''@/0/g' \
+      -e 's/@''GNULIB_FACCESSAT''@/0/g' \
+      -e 's/@''GNULIB_FCHDIR''@/0/g' \
+      -e 's/@''GNULIB_FCHOWNAT''@/0/g' \
+      -e 's/@''GNULIB_FDATASYNC''@/0/g' \
+      -e 's/@''GNULIB_FSYNC''@/0/g' \
+      -e 's/@''GNULIB_FTRUNCATE''@/0/g' \
+      -e 's/@''GNULIB_GETCWD''@/0/g' \
+      -e 's/@''GNULIB_GETDOMAINNAME''@/0/g' \
+      -e 's/@''GNULIB_GETDTABLESIZE''@/0/g' \
+      -e 's/@''GNULIB_GETGROUPS''@/0/g' \
+      -e 's/@''GNULIB_GETHOSTNAME''@/0/g' \
+      -e 's/@''GNULIB_GETLOGIN''@/0/g' \
+      -e 's/@''GNULIB_GETLOGIN_R''@/0/g' \
+      -e 's/@''GNULIB_GETPAGESIZE''@/0/g' \
+      -e 's/@''GNULIB_GETUSERSHELL''@/0/g' \
+      -e 's/@''GNULIB_GROUP_MEMBER''@/0/g' \
+      -e 's/@''GNULIB_ISATTY''@/0/g' \
+      -e 's/@''GNULIB_LCHOWN''@/0/g' \
+      -e 's/@''GNULIB_LINK''@/0/g' \
+      -e 's/@''GNULIB_LINKAT''@/0/g' \
+      -e 's/@''GNULIB_LSEEK''@/0/g' \
+      -e 's/@''GNULIB_PIPE''@/0/g' \
+      -e 's/@''GNULIB_PIPE2''@/0/g' \
+      -e 's/@''GNULIB_PREAD''@/0/g' \
+      -e 's/@''GNULIB_PWRITE''@/0/g' \
+      -e 's/@''GNULIB_READ''@/1/g' \
+      -e 's/@''GNULIB_READLINK''@/0/g' \
+      -e 's/@''GNULIB_READLINKAT''@/0/g' \
+      -e 's/@''GNULIB_RMDIR''@/0/g' \
+      -e 's/@''GNULIB_SETHOSTNAME''@/0/g' \
+      -e 's/@''GNULIB_SLEEP''@/0/g' \
+      -e 's/@''GNULIB_SYMLINK''@/0/g' \
+      -e 's/@''GNULIB_SYMLINKAT''@/0/g' \
+      -e 's/@''GNULIB_TTYNAME_R''@/0/g' \
+      -e 's/@''GNULIB_UNISTD_H_GETOPT''@/0/g' \
+      -e 's/@''GNULIB_UNISTD_H_NONBLOCKING''@/0/g' \
+      -e 's/@''GNULIB_UNISTD_H_SIGPIPE''@/0/g' \
+      -e 's/@''GNULIB_UNLINK''@/0/g' \
+      -e 's/@''GNULIB_UNLINKAT''@/0/g' \
+      -e 's/@''GNULIB_USLEEP''@/0/g' \
+      -e 's/@''GNULIB_WRITE''@/1/g' \
+      < ../../../../gnulib/lib/unistd.in.h | \
+  sed -e 's|@''HAVE_CHOWN''@|1|g' \
+      -e 's|@''HAVE_DUP2''@|1|g' \
+      -e 's|@''HAVE_DUP3''@|1|g' \
+      -e 's|@''HAVE_EUIDACCESS''@|1|g' \
+      -e 's|@''HAVE_FACCESSAT''@|1|g' \
+      -e 's|@''HAVE_FCHDIR''@|1|g' \
+      -e 's|@''HAVE_FCHOWNAT''@|1|g' \
+      -e 's|@''HAVE_FDATASYNC''@|1|g' \
+      -e 's|@''HAVE_FSYNC''@|1|g' \
+      -e 's|@''HAVE_FTRUNCATE''@|1|g' \
+      -e 's|@''HAVE_GETDTABLESIZE''@|1|g' \
+      -e 's|@''HAVE_GETGROUPS''@|1|g' \
+      -e 's|@''HAVE_GETHOSTNAME''@|1|g' \
+      -e 's|@''HAVE_GETLOGIN''@|1|g' \
+      -e 's|@''HAVE_GETPAGESIZE''@|1|g' \
+      -e 's|@''HAVE_GROUP_MEMBER''@|1|g' \
+      -e 's|@''HAVE_LCHOWN''@|1|g' \
+      -e 's|@''HAVE_LINK''@|1|g' \
+      -e 's|@''HAVE_LINKAT''@|1|g' \
+      -e 's|@''HAVE_PIPE''@|1|g' \
+      -e 's|@''HAVE_PIPE2''@|1|g' \
+      -e 's|@''HAVE_PREAD''@|1|g' \
+      -e 's|@''HAVE_PWRITE''@|1|g' \
+      -e 's|@''HAVE_READLINK''@|1|g' \
+      -e 's|@''HAVE_READLINKAT''@|1|g' \
+      -e 's|@''HAVE_SETHOSTNAME''@|1|g' \
+      -e 's|@''HAVE_SLEEP''@|1|g' \
+      -e 's|@''HAVE_SYMLINK''@|1|g' \
+      -e 's|@''HAVE_SYMLINKAT''@|1|g' \
+      -e 's|@''HAVE_UNLINKAT''@|1|g' \
+      -e 's|@''HAVE_USLEEP''@|1|g' \
+      -e 's|@''HAVE_DECL_ENVIRON''@|1|g' \
+      -e 's|@''HAVE_DECL_FCHDIR''@|1|g' \
+      -e 's|@''HAVE_DECL_FDATASYNC''@|1|g' \
+      -e 's|@''HAVE_DECL_GETDOMAINNAME''@|1|g' \
+      -e 's|@''HAVE_DECL_GETLOGIN_R''@|1|g' \
+      -e 's|@''HAVE_DECL_GETPAGESIZE''@|1|g' \
+      -e 's|@''HAVE_DECL_GETUSERSHELL''@|1|g' \
+      -e 's|@''HAVE_DECL_SETHOSTNAME''@|1|g' \
+      -e 's|@''HAVE_DECL_TTYNAME_R''@|1|g' \
+      -e 's|@''HAVE_OS_H''@|0|g' \
+      -e 's|@''HAVE_SYS_PARAM_H''@|0|g' \
+  | \
+  sed -e 's|@''REPLACE_CHOWN''@|0|g' \
+      -e 's|@''REPLACE_CLOSE''@|0|g' \
+      -e 's|@''REPLACE_DUP''@|0|g' \
+      -e 's|@''REPLACE_DUP2''@|0|g' \
+      -e 's|@''REPLACE_FCHOWNAT''@|0|g' \
+      -e 's|@''REPLACE_FTRUNCATE''@|0|g' \
+      -e 's|@''REPLACE_GETCWD''@|0|g' \
+      -e 's|@''REPLACE_GETDOMAINNAME''@|0|g' \
+      -e 's|@''REPLACE_GETDTABLESIZE''@|0|g' \
+      -e 's|@''REPLACE_GETLOGIN_R''@|0|g' \
+      -e 's|@''REPLACE_GETGROUPS''@|0|g' \
+      -e 's|@''REPLACE_GETPAGESIZE''@|0|g' \
+      -e 's|@''REPLACE_ISATTY''@|0|g' \
+      -e 's|@''REPLACE_LCHOWN''@|0|g' \
+      -e 's|@''REPLACE_LINK''@|0|g' \
+      -e 's|@''REPLACE_LINKAT''@|0|g' \
+      -e 's|@''REPLACE_LSEEK''@|0|g' \
+      -e 's|@''REPLACE_PREAD''@|0|g' \
+      -e 's|@''REPLACE_PWRITE''@|0|g' \
+      -e 's|@''REPLACE_READ''@|0|g' \
+      -e 's|@''REPLACE_READLINK''@|0|g' \
+      -e 's|@''REPLACE_RMDIR''@|0|g' \
+      -e 's|@''REPLACE_SLEEP''@|0|g' \
+      -e 's|@''REPLACE_SYMLINK''@|0|g' \
+      -e 's|@''REPLACE_TTYNAME_R''@|0|g' \
+      -e 's|@''REPLACE_UNLINK''@|0|g' \
+      -e 's|@''REPLACE_UNLINKAT''@|0|g' \
+      -e 's|@''REPLACE_USLEEP''@|0|g' \
+      -e 's|@''REPLACE_WRITE''@|0|g' \
+      -e 's|@''UNISTD_H_HAVE_WINSOCK2_H''@|0|g' \
+      -e 's|@''UNISTD_H_HAVE_WINSOCK2_H_AND_USE_SOCKETS''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r warn-on-use.h'; \
+} > unistd.h-t && \
+mv unistd.h-t unistd.h
+rm -f sys/wait.h-t sys/wait.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_SYS_WAIT_H''@|<sys/wait.h>|g' \
+      -e 's/@''GNULIB_WAITPID''@/1/g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r c++defs.h' \
+      -e '/definition of _GL_WARN_ON_USE/r warn-on-use.h' \
+      < ../../../../gnulib/lib/sys_wait.in.h; \
+} > sys/wait.h-t && \
+mv sys/wait.h-t sys/wait.h
+rm -f wchar.h-t wchar.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''HAVE_FEATURES_H''@|1|g' \
+      -e 's|@''NEXT_WCHAR_H''@|<wchar.h>|g' \
+      -e 's|@''HAVE_WCHAR_H''@|1|g' \
+      -e 's/@''GNULIB_BTOWC''@/0/g' \
+      -e 's/@''GNULIB_WCTOB''@/0/g' \
+      -e 's/@''GNULIB_MBSINIT''@/0/g' \
+      -e 's/@''GNULIB_MBRTOWC''@/0/g' \
+      -e 's/@''GNULIB_MBRLEN''@/0/g' \
+      -e 's/@''GNULIB_MBSRTOWCS''@/0/g' \
+      -e 's/@''GNULIB_MBSNRTOWCS''@/0/g' \
+      -e 's/@''GNULIB_WCRTOMB''@/0/g' \
+      -e 's/@''GNULIB_WCSRTOMBS''@/0/g' \
+      -e 's/@''GNULIB_WCSNRTOMBS''@/0/g' \
+      -e 's/@''GNULIB_WCWIDTH''@/0/g' \
+      -e 's/@''GNULIB_WMEMCHR''@/0/g' \
+      -e 's/@''GNULIB_WMEMCMP''@/0/g' \
+      -e 's/@''GNULIB_WMEMCPY''@/0/g' \
+      -e 's/@''GNULIB_WMEMMOVE''@/0/g' \
+      -e 's/@''GNULIB_WMEMSET''@/0/g' \
+      -e 's/@''GNULIB_WCSLEN''@/0/g' \
+      -e 's/@''GNULIB_WCSNLEN''@/0/g' \
+      -e 's/@''GNULIB_WCSCPY''@/0/g' \
+      -e 's/@''GNULIB_WCPCPY''@/0/g' \
+      -e 's/@''GNULIB_WCSNCPY''@/0/g' \
+      -e 's/@''GNULIB_WCPNCPY''@/0/g' \
+      -e 's/@''GNULIB_WCSCAT''@/0/g' \
+      -e 's/@''GNULIB_WCSNCAT''@/0/g' \
+      -e 's/@''GNULIB_WCSCMP''@/0/g' \
+      -e 's/@''GNULIB_WCSNCMP''@/0/g' \
+      -e 's/@''GNULIB_WCSCASECMP''@/0/g' \
+      -e 's/@''GNULIB_WCSNCASECMP''@/0/g' \
+      -e 's/@''GNULIB_WCSCOLL''@/0/g' \
+      -e 's/@''GNULIB_WCSXFRM''@/0/g' \
+      -e 's/@''GNULIB_WCSDUP''@/0/g' \
+      -e 's/@''GNULIB_WCSCHR''@/0/g' \
+      -e 's/@''GNULIB_WCSRCHR''@/0/g' \
+      -e 's/@''GNULIB_WCSCSPN''@/0/g' \
+      -e 's/@''GNULIB_WCSSPN''@/0/g' \
+      -e 's/@''GNULIB_WCSPBRK''@/0/g' \
+      -e 's/@''GNULIB_WCSSTR''@/0/g' \
+      -e 's/@''GNULIB_WCSTOK''@/0/g' \
+      -e 's/@''GNULIB_WCSWIDTH''@/0/g' \
+      < ../../../../gnulib/lib/wchar.in.h | \
+  sed -e 's|@''HAVE_WINT_T''@|1|g' \
+      -e 's|@''HAVE_BTOWC''@|1|g' \
+      -e 's|@''HAVE_MBSINIT''@|1|g' \
+      -e 's|@''HAVE_MBRTOWC''@|1|g' \
+      -e 's|@''HAVE_MBRLEN''@|1|g' \
+      -e 's|@''HAVE_MBSRTOWCS''@|1|g' \
+      -e 's|@''HAVE_MBSNRTOWCS''@|1|g' \
+      -e 's|@''HAVE_WCRTOMB''@|1|g' \
+      -e 's|@''HAVE_WCSRTOMBS''@|1|g' \
+      -e 's|@''HAVE_WCSNRTOMBS''@|1|g' \
+      -e 's|@''HAVE_WMEMCHR''@|1|g' \
+      -e 's|@''HAVE_WMEMCMP''@|1|g' \
+      -e 's|@''HAVE_WMEMCPY''@|1|g' \
+      -e 's|@''HAVE_WMEMMOVE''@|1|g' \
+      -e 's|@''HAVE_WMEMSET''@|1|g' \
+      -e 's|@''HAVE_WCSLEN''@|1|g' \
+      -e 's|@''HAVE_WCSNLEN''@|1|g' \
+      -e 's|@''HAVE_WCSCPY''@|1|g' \
+      -e 's|@''HAVE_WCPCPY''@|1|g' \
+      -e 's|@''HAVE_WCSNCPY''@|1|g' \
+      -e 's|@''HAVE_WCPNCPY''@|1|g' \
+      -e 's|@''HAVE_WCSCAT''@|1|g' \
+      -e 's|@''HAVE_WCSNCAT''@|1|g' \
+      -e 's|@''HAVE_WCSCMP''@|1|g' \
+      -e 's|@''HAVE_WCSNCMP''@|1|g' \
+      -e 's|@''HAVE_WCSCASECMP''@|1|g' \
+      -e 's|@''HAVE_WCSNCASECMP''@|1|g' \
+      -e 's|@''HAVE_WCSCOLL''@|1|g' \
+      -e 's|@''HAVE_WCSXFRM''@|1|g' \
+      -e 's|@''HAVE_WCSDUP''@|1|g' \
+      -e 's|@''HAVE_WCSCHR''@|1|g' \
+      -e 's|@''HAVE_WCSRCHR''@|1|g' \
+      -e 's|@''HAVE_WCSCSPN''@|1|g' \
+      -e 's|@''HAVE_WCSSPN''@|1|g' \
+      -e 's|@''HAVE_WCSPBRK''@|1|g' \
+      -e 's|@''HAVE_WCSSTR''@|1|g' \
+      -e 's|@''HAVE_WCSTOK''@|1|g' \
+      -e 's|@''HAVE_WCSWIDTH''@|1|g' \
+      -e 's|@''HAVE_DECL_WCTOB''@|1|g' \
+      -e 's|@''HAVE_DECL_WCWIDTH''@|1|g' \
+  | \
+  sed -e 's|@''REPLACE_MBSTATE_T''@|0|g' \
+      -e 's|@''REPLACE_BTOWC''@|0|g' \
+      -e 's|@''REPLACE_WCTOB''@|0|g' \
+      -e 's|@''REPLACE_MBSINIT''@|0|g' \
+      -e 's|@''REPLACE_MBRTOWC''@|0|g' \
+      -e 's|@''REPLACE_MBRLEN''@|0|g' \
+      -e 's|@''REPLACE_MBSRTOWCS''@|0|g' \
+      -e 's|@''REPLACE_MBSNRTOWCS''@|0|g' \
+      -e 's|@''REPLACE_WCRTOMB''@|0|g' \
+      -e 's|@''REPLACE_WCSRTOMBS''@|0|g' \
+      -e 's|@''REPLACE_WCSNRTOMBS''@|0|g' \
+      -e 's|@''REPLACE_WCWIDTH''@|0|g' \
+      -e 's|@''REPLACE_WCSWIDTH''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r warn-on-use.h'; \
+} > wchar.h-t && \
+mv wchar.h-t wchar.h
+make  all-recursive
+make[4]: Entering directory '/dev/shm/libpipeline/libpipeline/debian/build/gnulib/lib'
+make[5]: Entering directory '/dev/shm/libpipeline/libpipeline/debian/build/gnulib/lib'
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o dirname.lo ../../../../gnulib/lib/dirname.c
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o basename.lo ../../../../gnulib/lib/basename.c
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o dirname-lgpl.lo ../../../../gnulib/lib/dirname-lgpl.c
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o basename-lgpl.lo ../../../../gnulib/lib/basename-lgpl.c
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o stripslash.lo ../../../../gnulib/lib/stripslash.c
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o exitfail.lo ../../../../gnulib/lib/exitfail.c
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o full-write.lo ../../../../gnulib/lib/full-write.c
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o malloca.lo ../../../../gnulib/lib/malloca.c
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../../gnulib/lib/dirname.c  -fpic -o .libs/dirname.o
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../../gnulib/lib/dirname-lgpl.c  -fpic -o .libs/dirname-lgpl.o
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../../gnulib/lib/basename-lgpl.c  -fpic -o .libs/basename-lgpl.o
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../../gnulib/lib/stripslash.c  -fpic -o .libs/stripslash.o
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../../gnulib/lib/basename.c  -fpic -o .libs/basename.o
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../../gnulib/lib/full-write.c  -fpic -o .libs/full-write.o
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../../gnulib/lib/exitfail.c  -fpic -o .libs/exitfail.o
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../../gnulib/lib/malloca.c  -fpic -o .libs/malloca.o
+../../../../gnulib/lib/dirname-lgpl.c
+../../../../gnulib/lib/dirname.c
+../../../../gnulib/lib/stripslash.c
+../../../../gnulib/lib/basename-lgpl.c
+../../../../gnulib/lib/basename.c
+../../../../gnulib/lib/full-write.c
+../../../../gnulib/lib/exitfail.c
+../../../../gnulib/lib/malloca.c
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o safe-read.lo ../../../../gnulib/lib/safe-read.c
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o safe-write.lo ../../../../gnulib/lib/safe-write.c
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o sig-handler.lo ../../../../gnulib/lib/sig-handler.c
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o tempname.lo ../../../../gnulib/lib/tempname.c
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o glthread/threadlib.lo ../../../../gnulib/lib/glthread/threadlib.c
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o glthread/tls.lo ../../../../gnulib/lib/glthread/tls.c
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o unistd.lo ../../../../gnulib/lib/unistd.c
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o xmalloc.lo ../../../../gnulib/lib/xmalloc.c
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../../gnulib/lib/safe-read.c  -fpic -o .libs/safe-read.o
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../../gnulib/lib/safe-write.c  -fpic -o .libs/safe-write.o
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../../gnulib/lib/tempname.c  -fpic -o .libs/tempname.o
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../../gnulib/lib/sig-handler.c  -fpic -o .libs/sig-handler.o
+../../../../gnulib/lib/safe-read.c
+../../../../gnulib/lib/safe-write.c
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../../gnulib/lib/glthread/threadlib.c  -fpic -o glthread/.libs/threadlib.o
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../../gnulib/lib/unistd.c  -fpic -o .libs/unistd.o
+../../../../gnulib/lib/tempname.c
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../../gnulib/lib/glthread/tls.c  -fpic -o glthread/.libs/tls.o
+../../../../gnulib/lib/sig-handler.c
+../../../../gnulib/lib/glthread/threadlib.c
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../../gnulib/lib/xmalloc.c  -fpic -o .libs/xmalloc.o
+../../../../gnulib/lib/unistd.c
+../../../../gnulib/lib/glthread/tls.c
+../../../../gnulib/lib/xmalloc.c
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o xalloc-die.lo ../../../../gnulib/lib/xalloc-die.c
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o xsize.lo ../../../../gnulib/lib/xsize.c
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o xstrndup.lo ../../../../gnulib/lib/xstrndup.c
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o xvasprintf.lo ../../../../gnulib/lib/xvasprintf.c
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o xasprintf.lo ../../../../gnulib/lib/xasprintf.c
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o asnprintf.lo ../../../../gnulib/lib/asnprintf.c
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o printf-args.lo ../../../../gnulib/lib/printf-args.c
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o printf-parse.lo ../../../../gnulib/lib/printf-parse.c
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../../gnulib/lib/xsize.c  -fpic -o .libs/xsize.o
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../../gnulib/lib/xalloc-die.c  -fpic -o .libs/xalloc-die.o
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../../gnulib/lib/xstrndup.c  -fpic -o .libs/xstrndup.o
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../../gnulib/lib/xvasprintf.c  -fpic -o .libs/xvasprintf.o
+../../../../gnulib/lib/xsize.c
+../../../../gnulib/lib/xalloc-die.c
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../../gnulib/lib/xasprintf.c  -fpic -o .libs/xasprintf.o
+../../../../gnulib/lib/xstrndup.c
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../../gnulib/lib/asnprintf.c  -fpic -o .libs/asnprintf.o
+../../../../gnulib/lib/xvasprintf.c
+../../../../gnulib/lib/xasprintf.c
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../../gnulib/lib/printf-args.c  -fpic -o .libs/printf-args.o
+../../../../gnulib/lib/asnprintf.c
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../../gnulib/lib/printf-parse.c  -fpic -o .libs/printf-parse.o
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o vasnprintf.lo ../../../../gnulib/lib/vasnprintf.c
+../../../../gnulib/lib/printf-args.c
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o glthread/lock.lo ../../../../gnulib/lib/glthread/lock.c
+../../../../gnulib/lib/printf-parse.c
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../../gnulib/lib/vasnprintf.c  -fpic -o .libs/vasnprintf.o
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../../gnulib/lib -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../../gnulib/lib/glthread/lock.c  -fpic -o glthread/.libs/lock.o
+../../../../gnulib/lib/vasnprintf.c
+../../../../gnulib/lib/glthread/lock.c
+/bin/bash ../../libtool  --tag=CC   --mode=link icc  -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall  -no-undefined   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed,--gc-sections,--relax -o libgnu.la  dirname.lo basename.lo dirname-lgpl.lo basename-lgpl.lo stripslash.lo exitfail.lo full-write.lo glthread/lock.lo malloca.lo safe-read.lo safe-write.lo sig-handler.lo tempname.lo glthread/threadlib.lo glthread/tls.lo unistd.lo xmalloc.lo xalloc-die.lo xsize.lo xstrndup.lo xvasprintf.lo xasprintf.lo asnprintf.lo printf-args.lo printf-parse.lo vasnprintf.lo 
+libtool: link: xiar cru .libs/libgnu.a .libs/dirname.o .libs/basename.o .libs/dirname-lgpl.o .libs/basename-lgpl.o .libs/stripslash.o .libs/exitfail.o .libs/full-write.o glthread/.libs/lock.o .libs/malloca.o .libs/safe-read.o .libs/safe-write.o .libs/sig-handler.o .libs/tempname.o glthread/.libs/threadlib.o glthread/.libs/tls.o .libs/unistd.o .libs/xmalloc.o .libs/xalloc-die.o .libs/xsize.o .libs/xstrndup.o .libs/xvasprintf.o .libs/xasprintf.o .libs/asnprintf.o .libs/printf-args.o .libs/printf-parse.o .libs/vasnprintf.o 
+xiar: executing 'ar'
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: /usr/bin/x86_64-linux-gnu-ranlib .libs/libgnu.a
+libtool: link: ( cd ".libs" && rm -f "libgnu.la" && ln -s "../libgnu.la" "libgnu.la" )
+make[5]: Leaving directory '/dev/shm/libpipeline/libpipeline/debian/build/gnulib/lib'
+make[4]: Leaving directory '/dev/shm/libpipeline/libpipeline/debian/build/gnulib/lib'
+make[3]: Leaving directory '/dev/shm/libpipeline/libpipeline/debian/build/gnulib/lib'
+Making all in lib
+make[3]: Entering directory '/dev/shm/libpipeline/libpipeline/debian/build/lib'
+/bin/bash ../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../lib -I..  -I../../../gnulib/lib -I../gnulib/lib -Wdate-time -D_FORTIFY_SOURCE=2 -W -Wpointer-arith -Wwrite-strings -Wshadow -Wformat-security -Wredundant-decls -Wno-missing-field-initializers -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o libpipeline_la-appendstr.lo `test -f 'appendstr.c' || echo '../../../lib/'`appendstr.c
+/bin/bash ../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../lib -I..  -I../../../gnulib/lib -I../gnulib/lib -Wdate-time -D_FORTIFY_SOURCE=2 -W -Wpointer-arith -Wwrite-strings -Wshadow -Wformat-security -Wredundant-decls -Wno-missing-field-initializers -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o libpipeline_la-debug.lo `test -f 'debug.c' || echo '../../../lib/'`debug.c
+/bin/bash ../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../../../lib -I..  -I../../../gnulib/lib -I../gnulib/lib -Wdate-time -D_FORTIFY_SOURCE=2 -W -Wpointer-arith -Wwrite-strings -Wshadow -Wformat-security -Wredundant-decls -Wno-missing-field-initializers -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c -o libpipeline_la-pipeline.lo `test -f 'pipeline.c' || echo '../../../lib/'`pipeline.c
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../lib -I.. -I../../../gnulib/lib -I../gnulib/lib -Wdate-time -D_FORTIFY_SOURCE=2 -W -Wpointer-arith -Wwrite-strings -Wshadow -Wformat-security -Wredundant-decls -Wno-missing-field-initializers -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../lib/appendstr.c  -fpic -o .libs/libpipeline_la-appendstr.o
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../lib -I.. -I../../../gnulib/lib -I../gnulib/lib -Wdate-time -D_FORTIFY_SOURCE=2 -W -Wpointer-arith -Wwrite-strings -Wshadow -Wformat-security -Wredundant-decls -Wno-missing-field-initializers -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../lib/pipeline.c  -fpic -o .libs/libpipeline_la-pipeline.o
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../../../lib -I.. -I../../../gnulib/lib -I../gnulib/lib -Wdate-time -D_FORTIFY_SOURCE=2 -W -Wpointer-arith -Wwrite-strings -Wshadow -Wformat-security -Wredundant-decls -Wno-missing-field-initializers -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -c ../../../lib/debug.c  -fpic -o .libs/libpipeline_la-debug.o
+../../../lib/appendstr.c
+../../../lib/debug.c
+../../../lib/pipeline.c
+/bin/bash ../libtool  --tag=CC   --mode=link icc -W -Wpointer-arith -Wwrite-strings -Wshadow -Wformat-security -Wredundant-decls -Wno-missing-field-initializers -g -O2 -fdebug-prefix-map=/dev/shm/libpipeline/libpipeline=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wall -export-symbols-regex '^(pipecmd|pipeline)_' -no-undefined -version-info 6:0:5 -Wl,-z,relro -Wl,-z,now -Wl,--as-needed,--gc-sections,--relax -o libpipeline.la -rpath /usr/lib/x86_64-linux-gnu libpipeline_la-appendstr.lo libpipeline_la-debug.lo libpipeline_la-pipeline.lo ../gnulib/lib/libgnu.la  
+libtool: link: /usr/bin/x86_64-linux-gnu-nm -B  .libs/libpipeline_la-appendstr.o .libs/libpipeline_la-debug.o .libs/libpipeline_la-pipeline.o   ../gnulib/lib/.libs/libgnu.a | sed -n -e 's/^.*[	 ]\([ABCDGIRSTW][ABCDGIRSTW]*\)[	 ][	 ]*\([_A-Za-z][_A-Za-z0-9]*\)$/\1 \2 \2/p' | sed '/ __gnu_lto/d' | /bin/sed 's/.* //' | sort | uniq > .libs/libpipeline.exp
+libtool: link: /bin/grep -E -e "^(pipecmd|pipeline)_" ".libs/libpipeline.exp" > ".libs/libpipeline.expT"
+libtool: link: mv -f ".libs/libpipeline.expT" ".libs/libpipeline.exp"
+libtool: link: echo "{ global:" > .libs/libpipeline.ver
+libtool: link:  cat .libs/libpipeline.exp | sed -e "s/\(.*\)/\1;/" >> .libs/libpipeline.ver
+libtool: link:  echo "local: *; };" >> .libs/libpipeline.ver
+libtool: link:  icc -shared  -fpic  .libs/libpipeline_la-appendstr.o .libs/libpipeline_la-debug.o .libs/libpipeline_la-pipeline.o  -Wl,--whole-archive ../gnulib/lib/.libs/libgnu.a -Wl,--no-whole-archive   -g -O2 -fstack-protector-strong -march=native -Wl,-z -Wl,relro -Wl,-z -Wl,now -Wl,--as-needed -Wl,--gc-sections -Wl,--relax   -Wl,-soname -Wl,libpipeline.so.1 -Wl,-version-script -Wl,.libs/libpipeline.ver -o .libs/libpipeline.so.1.5.0
+libtool: link: (cd ".libs" && rm -f "libpipeline.so.1" && ln -s "libpipeline.so.1.5.0" "libpipeline.so.1")
+libtool: link: (cd ".libs" && rm -f "libpipeline.so" && ln -s "libpipeline.so.1.5.0" "libpipeline.so")
+libtool: link: ( cd ".libs" && rm -f "libpipeline.la" && ln -s "../libpipeline.la" "libpipeline.la" )
+make[3]: Leaving directory '/dev/shm/libpipeline/libpipeline/debian/build/lib'
+Making all in man
+make[3]: Entering directory '/dev/shm/libpipeline/libpipeline/debian/build/man'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/dev/shm/libpipeline/libpipeline/debian/build/man'
+make[3]: Entering directory '/dev/shm/libpipeline/libpipeline/debian/build'
+make[3]: Leaving directory '/dev/shm/libpipeline/libpipeline/debian/build'
+make[2]: Leaving directory '/dev/shm/libpipeline/libpipeline/debian/build'
+make[1]: Leaving directory '/dev/shm/libpipeline/libpipeline/debian/build'
+   debian/rules override_dh_auto_test
+make[1]: Entering directory '/dev/shm/libpipeline/libpipeline'
+# libcheck.a isn't built with -fPIC, so we have trouble on amd64 if
+# we link with -fPIC etc. here.
+VERBOSE=1 dh_auto_test -- LDFLAGS=
+make[1]: Leaving directory '/dev/shm/libpipeline/libpipeline'
+   create-stamp debian/debhelper-build-stamp
+   dh_testroot -O--builddirectory=debian/build
+   dh_prep -O--builddirectory=debian/build
+   dh_installdirs -O--builddirectory=debian/build
+   debian/rules override_dh_auto_install
+make[1]: Entering directory '/dev/shm/libpipeline/libpipeline'
+dh_auto_install
+	cd debian/build && make -j1 install DESTDIR=/dev/shm/libpipeline/libpipeline/debian/tmp AM_UPDATE_INFO_DIR=no
+make[2]: Entering directory '/dev/shm/libpipeline/libpipeline/debian/build'
+Making install in gnulib/lib
+make[3]: Entering directory '/dev/shm/libpipeline/libpipeline/debian/build/gnulib/lib'
+make  install-recursive
+make[4]: Entering directory '/dev/shm/libpipeline/libpipeline/debian/build/gnulib/lib'
+make[5]: Entering directory '/dev/shm/libpipeline/libpipeline/debian/build/gnulib/lib'
+make[6]: Entering directory '/dev/shm/libpipeline/libpipeline/debian/build/gnulib/lib'
+make[6]: Nothing to be done for 'install-exec-am'.
+make[6]: Nothing to be done for 'install-data-am'.
+make[6]: Leaving directory '/dev/shm/libpipeline/libpipeline/debian/build/gnulib/lib'
+make[5]: Leaving directory '/dev/shm/libpipeline/libpipeline/debian/build/gnulib/lib'
+make[4]: Leaving directory '/dev/shm/libpipeline/libpipeline/debian/build/gnulib/lib'
+make[3]: Leaving directory '/dev/shm/libpipeline/libpipeline/debian/build/gnulib/lib'
+Making install in lib
+make[3]: Entering directory '/dev/shm/libpipeline/libpipeline/debian/build/lib'
+make[4]: Entering directory '/dev/shm/libpipeline/libpipeline/debian/build/lib'
+ /bin/mkdir -p '/dev/shm/libpipeline/libpipeline/debian/tmp/usr/lib/x86_64-linux-gnu'
+ /bin/bash ../libtool   --mode=install /usr/bin/install   libpipeline.la '/dev/shm/libpipeline/libpipeline/debian/tmp/usr/lib/x86_64-linux-gnu'
+libtool: install: /usr/bin/install .libs/libpipeline.so.1.5.0 /dev/shm/libpipeline/libpipeline/debian/tmp/usr/lib/x86_64-linux-gnu/libpipeline.so.1.5.0
+libtool: install: (cd /dev/shm/libpipeline/libpipeline/debian/tmp/usr/lib/x86_64-linux-gnu && { ln -s -f libpipeline.so.1.5.0 libpipeline.so.1 || { rm -f libpipeline.so.1 && ln -s libpipeline.so.1.5.0 libpipeline.so.1; }; })
+libtool: install: (cd /dev/shm/libpipeline/libpipeline/debian/tmp/usr/lib/x86_64-linux-gnu && { ln -s -f libpipeline.so.1.5.0 libpipeline.so || { rm -f libpipeline.so && ln -s libpipeline.so.1.5.0 libpipeline.so; }; })
+libtool: install: /usr/bin/install .libs/libpipeline.lai /dev/shm/libpipeline/libpipeline/debian/tmp/usr/lib/x86_64-linux-gnu/libpipeline.la
+libtool: warning: remember to run 'libtool --finish /usr/lib/x86_64-linux-gnu'
+ /bin/mkdir -p '/dev/shm/libpipeline/libpipeline/debian/tmp/usr/include'
+ /usr/bin/install -m 644 ../../../lib/pipeline.h '/dev/shm/libpipeline/libpipeline/debian/tmp/usr/include'
+ /bin/mkdir -p '/dev/shm/libpipeline/libpipeline/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig'
+ /usr/bin/install -m 644 libpipeline.pc '/dev/shm/libpipeline/libpipeline/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig'
+make[4]: Leaving directory '/dev/shm/libpipeline/libpipeline/debian/build/lib'
+make[3]: Leaving directory '/dev/shm/libpipeline/libpipeline/debian/build/lib'
+Making install in man
+make[3]: Entering directory '/dev/shm/libpipeline/libpipeline/debian/build/man'
+make[4]: Entering directory '/dev/shm/libpipeline/libpipeline/debian/build/man'
+make[4]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/dev/shm/libpipeline/libpipeline/debian/tmp/usr/share/man/man3'
+ /usr/bin/install -m 644 ../../../man/libpipeline.3 '/dev/shm/libpipeline/libpipeline/debian/tmp/usr/share/man/man3'
+make  install-data-hook
+make[5]: Entering directory '/dev/shm/libpipeline/libpipeline/debian/build/man'
+set -e; cd "/dev/shm/libpipeline/libpipeline/debian/tmp/usr/share/man/man3"; for function in pipecmd_new pipecmd_new_argv pipecmd_new_args pipecmd_new_argstr pipecmd_new_function pipecmd_new_sequencev pipecmd_new_sequence pipecmd_new_passthrough pipecmd_dup pipecmd_arg pipecmd_argf pipecmd_argv pipecmd_args pipecmd_argstr pipecmd_get_nargs pipecmd_nice pipecmd_discard_err pipecmd_chdir pipecmd_fchdir pipecmd_setenv pipecmd_unsetenv pipecmd_clearenv pipecmd_pre_exec pipecmd_sequence_command pipecmd_dump pipecmd_tostring pipecmd_exec pipecmd_free pipeline_new pipeline_new_commandv pipeline_new_commands pipeline_new_command_argv pipeline_new_command_args pipeline_join pipeline_connect pipeline_command pipeline_command_argv pipeline_command_args pipeline_command_argstr pipeline_commandv pipeline_commands pipeline_want_in pipeline_want_out pipeline_want_infile pipeline_want_outfile pipeline_ignore_signals pipeline_get_ncommands pipeline_get_command pipeline_set_command pipeline_get_pid pipeline_get_infile pipeline_get_outfile pipeline_dump pipeline_tostring pipeline_free pipeline_install_post_fork pipeline_start pipeline_wait_all pipeline_wait pipeline_run pipeline_pump pipeline_read pipeline_peek pipeline_peek_size pipeline_peek_skip pipeline_readline pipeline_peekline; do \
+	rm -f $function.3; \
+	ln -s libpipeline.3 $function.3; \
+done
+make[5]: Leaving directory '/dev/shm/libpipeline/libpipeline/debian/build/man'
+make[4]: Leaving directory '/dev/shm/libpipeline/libpipeline/debian/build/man'
+make[3]: Leaving directory '/dev/shm/libpipeline/libpipeline/debian/build/man'
+make[3]: Entering directory '/dev/shm/libpipeline/libpipeline/debian/build'
+make[4]: Entering directory '/dev/shm/libpipeline/libpipeline/debian/build'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/dev/shm/libpipeline/libpipeline/debian/build'
+make[3]: Leaving directory '/dev/shm/libpipeline/libpipeline/debian/build'
+make[2]: Leaving directory '/dev/shm/libpipeline/libpipeline/debian/build'
+rm -f debian/tmp/usr/lib/x86_64-linux-gnu/libpipeline.la
+make[1]: Leaving directory '/dev/shm/libpipeline/libpipeline'
+   dh_install -O--builddirectory=debian/build
+   debian/rules override_dh_installdocs
+make[1]: Entering directory '/dev/shm/libpipeline/libpipeline'
+dh_installdocs --link-doc=libpipeline1
+make[1]: Leaving directory '/dev/shm/libpipeline/libpipeline'
+   dh_installchangelogs -O--builddirectory=debian/build
+   dh_installexamples -O--builddirectory=debian/build
+   dh_installman -O--builddirectory=debian/build
+   dh_installcatalogs -O--builddirectory=debian/build
+   dh_installcron -O--builddirectory=debian/build
+   dh_installdebconf -O--builddirectory=debian/build
+   dh_installemacsen -O--builddirectory=debian/build
+   dh_installifupdown -O--builddirectory=debian/build
+   dh_installinfo -O--builddirectory=debian/build
+   dh_systemd_enable -O--builddirectory=debian/build
+   dh_installinit -O--builddirectory=debian/build
+   dh_systemd_start -O--builddirectory=debian/build
+   dh_installmenu -O--builddirectory=debian/build
+   dh_installmime -O--builddirectory=debian/build
+   dh_installmodules -O--builddirectory=debian/build
+   dh_installlogcheck -O--builddirectory=debian/build
+   dh_installlogrotate -O--builddirectory=debian/build
+   dh_installpam -O--builddirectory=debian/build
+   dh_installppp -O--builddirectory=debian/build
+   dh_installudev -O--builddirectory=debian/build
+   dh_installgsettings -O--builddirectory=debian/build
+   dh_bugfiles -O--builddirectory=debian/build
+   dh_ucf -O--builddirectory=debian/build
+   dh_lintian -O--builddirectory=debian/build
+   dh_gconf -O--builddirectory=debian/build
+dh_gconf: Please migrate to dh_installgsettings; gconf + dh_gconf is scheduled for removal.
+   dh_icons -O--builddirectory=debian/build
+   dh_perl -O--builddirectory=debian/build
+   dh_usrlocal -O--builddirectory=debian/build
+   dh_link -O--builddirectory=debian/build
+   dh_installwm -O--builddirectory=debian/build
+   dh_installxfonts -O--builddirectory=debian/build
+   dh_strip_nondeterminism -O--builddirectory=debian/build
+   dh_compress -O--builddirectory=debian/build
+   dh_fixperms -O--builddirectory=debian/build
+   dh_missing -O--builddirectory=debian/build
+   dh_strip -O--builddirectory=debian/build
+   debian/rules override_dh_makeshlibs
+make[1]: Entering directory '/dev/shm/libpipeline/libpipeline'
+dh_makeshlibs -V'libpipeline1 (>= 1.5.0)' -- -c4
+make[1]: Leaving directory '/dev/shm/libpipeline/libpipeline'
+   dh_shlibdeps -O--builddirectory=debian/build
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/libpipeline1/usr/lib/x86_64-linux-gnu/libpipeline.so.1.5.0 was not linked against libdl.so.2 (it uses none of the library's symbols)
+   dh_installdeb -O--builddirectory=debian/build
+   dh_gencontrol -O--builddirectory=debian/build
+   dh_md5sums -O--builddirectory=debian/build
+   dh_builddeb -O--builddirectory=debian/build
+dpkg-deb: building package 'libpipeline1' in '../libpipeline1_1.5.0-2_amd64.deb'.
+dpkg-deb: building package 'libpipeline1-dbgsym' in '../libpipeline1-dbgsym_1.5.0-2_amd64.deb'.
+dpkg-deb: building package 'libpipeline-dev' in '../libpipeline-dev_1.5.0-2_amd64.deb'.
+ dpkg-genbuildinfo --build=binary
+ dpkg-genchanges --build=binary >../libpipeline_1.5.0-2_amd64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian libpipeline_1.5.0-2_amd64.changes ...
+Finished running lintian.

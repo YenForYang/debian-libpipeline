@@ -1,0 +1,43 @@
+Format: 1.8
+Date: Sat, 27 Oct 2018 16:47:51 +0100
+Source: libpipeline
+Binary: libpipeline1 libpipeline-dev
+Built-For-Profiles: nobiarch nocheck nodoc
+Architecture: amd64
+Version: 1.5.0-2
+Distribution: unstable
+Urgency: medium
+Maintainer: Colin Watson <cjwatson@debian.org>
+Changed-By: Colin Watson <cjwatson@debian.org>
+Description:
+ libpipeline-dev - pipeline manipulation library (development files)
+ libpipeline1 - pipeline manipulation library
+Changes:
+ libpipeline (1.5.0-2) unstable; urgency=medium
+ .
+   * Move VCS to salsa.debian.org.
+   * Adjust git-dpm tagging configuration.
+   * Upgrade to debhelper v10.
+   * Set Rules-Requires-Root: no.
+   * Simplify debian/rules using /usr/share/dpkg/architecture.mk and
+     /usr/share/dpkg/pkg-info.mk.
+   * Drop priority to optional, per Lintian's
+     excessive-priority-for-library-package tag; a higher priority can be
+     handled using overrides if necessary.
+   * Stop building with V=1; debhelper configures with --disable-silent-rules
+     as of 9.20150501.
+Checksums-Sha1:
+ 0816eb6430dd4849fc3ee3fabb260c74b873a3db 15064 libpipeline-dev_1.5.0-2_amd64.deb
+ 9ad70d3a975c03fdb212b228cf75a762c66eb887 47136 libpipeline1-dbgsym_1.5.0-2_amd64.deb
+ c0194c1f93d056e1dcf97a5c6df39b651984d3f2 31452 libpipeline1_1.5.0-2_amd64.deb
+ 7c5bb93ed07f625a42d98a11abebd550b702ed7a 5561 libpipeline_1.5.0-2_amd64.buildinfo
+Checksums-Sha256:
+ 400a41c7e52a0cb97a0aab52f29e7c787355cfc6cd7873782ee60726d6bb109e 15064 libpipeline-dev_1.5.0-2_amd64.deb
+ 1a15495334cd855f144e2bdd1689b0772aaa7a271351feee42deea55194858e3 47136 libpipeline1-dbgsym_1.5.0-2_amd64.deb
+ 6bf6cc0af8e326d571709e189dbbac40e674ebc909240c4c499000f24fe27fab 31452 libpipeline1_1.5.0-2_amd64.deb
+ 98b55c2cb9521035caf15a526c40e1dad8110675f2b0c2b76bad8ddb07fe129f 5561 libpipeline_1.5.0-2_amd64.buildinfo
+Files:
+ 3751cb1c1eef5490ede07f3550f870b5 15064 libdevel optional libpipeline-dev_1.5.0-2_amd64.deb
+ a53a065ecfb991e65940ef3f475bdfd7 47136 debug optional libpipeline1-dbgsym_1.5.0-2_amd64.deb
+ 60370cfb8747ffa360ed4be617f50fb7 31452 libs optional libpipeline1_1.5.0-2_amd64.deb
+ 9f309522e9f491134bb2197aee17ff99 5561 libs optional libpipeline_1.5.0-2_amd64.buildinfo
